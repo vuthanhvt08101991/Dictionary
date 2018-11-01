@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="gmail.vuthanhvt.dictionary.screen.vietmong.VietMongPresenter" />
+
+        <variable
+            name="adapter"
+            type="gmail.vuthanhvt.dictionary.screen.vietmong.view.VietMongAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_layout"
+            app:leftIcon="@{ @drawable/ic_chevron_left }"
+            app:leftIconClick="@{ () -> presenter.onClickBackView() }"
+            app:rightIcon="@{ @drawable/ic_add }"
+            app:rightIconClick="@{ () -> presenter.onClickAddView() }"
+            app:title="@{ @string/item_menu_vietmong }" />
+
+        <RelativeLayout
+            android:id="@+id/menu_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/searchEdt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:drawableLeft="@drawable/icon_search"
+                android:paddingStart="@dimen/dp_10" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_60"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_60">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:text="@string/activity_vietmong_vietnamword"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/dp_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/hmong_word"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:text="@string/activity_vietmong_hmongword"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/dp_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/reading"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:text="@string/activity_vietmong_reading"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_100"
+                android:background="@color/colorPrimary" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_words"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_101"
+                app:adapter="@{adapter}"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

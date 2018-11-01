@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="black_opacity_30">#4D000000</color>
+    <color name="beige_background">#f7f3ec</color>
+    <color name="black_text">#333333</color>
+    <color name="warm_grey">#969696</color>
+    <color name="grey_1">#55080808</color>
+    <color name="item_menu_pressed">#00cab5</color>
+    <color name="item_menu_selected">#737373</color>
+    <color name="background_dialog">#FFBB33</color>
+    <color name="edittext_hint">#029f8f</color>
+</resources>

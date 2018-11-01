@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="gmail.vuthanhvt.dictionary.data.model.MongViet" />
+
+        <variable
+            name="onLongClick"
+            type="android.view.View.OnLongClickListener" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_chosen_mongviet"
+            android:onLongClick="@{ onLongClick }"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/vietnam_word"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_30"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_5"
+                android:singleLine="true"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/sp_10"
+                android:text="@{ item.getVietnameseWord() }"
+                tools:text="Tieng Viet" />
+
+            <TextView
+                android:id="@+id/hmong_word"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_30"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_5"
+                android:singleLine="true"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/sp_10"
+                android:text="@{ item.getHMongWord() }"
+                tools:text="Tieng H'Mong" />
+
+            <TextView
+                android:id="@+id/reading"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_30"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_5"
+                android:singleLine="true"
+                android:textColor="@color/black_text"
+                android:textStyle="italic"
+                android:textSize="@dimen/sp_10"
+                android:text="@{ item.getReading() }"
+                tools:text="Cach doc" />
+
+            <View
+                android:id="@+id/speaker_icon"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:background="@drawable/ic_speaker"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/grey_1"/>
+    </LinearLayout>
+</layout>

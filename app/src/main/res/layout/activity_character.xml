@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="gmail.vuthanhvt.dictionary.screen.character.CharacterPresenter" />
+
+        <variable
+            name="adapter"
+            type="gmail.vuthanhvt.dictionary.screen.character.view.CharacterAdapter" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_layout"
+            app:leftIcon="@{ @drawable/ic_chevron_left }"
+            app:leftIconClick="@{ () -> presenter.onClickBackView() }"
+            app:rightIcon="@{ presenter.isClickedMenuIcon ? @drawable/ic_menu_selected : @drawable/ic_menu_unselected}"
+            app:rightIconClick="@{ () -> presenter.onClickMenuView() }"
+            app:title="@{ @string/activity_character_title }" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:gravity="center"
+                android:textSize="@dimen/sp_24"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:text="@{ presenter.mTableName }"
+                tools:text="Bang nguyen am"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_60"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_60">
+
+                <TextView
+                    android:id="@+id/hmong_word"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold"
+                    android:text="@{ presenter.mCharacterCol}"
+                    tools:text="Nguyen am"/>
+
+                <View
+                    android:layout_width="@dimen/dp_0_5"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/reading"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"
+                    android:singleLine="true"
+                    android:text="@string/activity_vietmong_reading"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold|italic"
+                    tools:text="Cach doc"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_100"
+                android:background="@color/colorPrimary" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_character"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_101"
+                app:adapter="@{adapter}" />
+
+            <include
+                android:id="@+id/menu_layout"
+                layout="@layout/menu_character"
+                android:layout_width="@dimen/dp_170"
+                android:layout_height="@dimen/dp_161_5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                app:onClickItemConsonant="@{ () -> presenter.onClickItemConsonant() }"
+                app:onClickItemRhyme="@{ () -> presenter.onClickItemRhyme() }"
+                app:onClickItemTone="@{ () -> presenter.onClickItemTone() }"
+                app:onClickItemVowel="@{ () -> presenter.onClickItemVowel() }"
+                android:visibility="@{ presenter.isClickedMenuIcon ? View.VISIBLE : View.GONE }"
+                tools:visibility="visible" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+    <string name="no_data">Không có dữ liệu.</string>
+    <string name="default_name_menu_item">Name\'s item</string>
+    <string name="item_menu_vietmong">Tu dien Viet - H\'Mong</string>
+    <string name="item_menu_mongviet">Tu dien H\'Mong - Viet</string>
+    <string name="item_menu_character">Ky tu H\'Mong</string>
+    <string name="item_menu_history">Lich su dan toc H\'Mong</string>
+    <string name="item_menu_info">Thong tin ban quyen</string>
+    <string name="activity_main_title">Tu dien Viet - H\'Mong</string>
+    <string name="activity_info_title">Thong tin ban quyen</string>
+    <string name="activity_character_title">Ky tu H\'Mong</string>
+    <string name="activity_vietmong_vietnamword">Tieng Viet</string>
+    <string name="activity_vietmong_hmongword">Tieng H\'Mong</string>
+    <string name="activity_vietmong_reading">Cach doc</string>
+    <string name="menu_character_vowwel">Bang nguyen am</string>
+    <string name="menu_character_consonant">Bang phu am</string>
+    <string name="menu_character_rhyme">Bang van</string>
+    <string name="menu_character_tone">Bang thanh dieu</string>
+    <string name="vowel_col">Nguyen am</string>
+    <string name="consonant_col">Phu am</string>
+    <string name="rhyme_col">Van</string>
+    <string name="tone_col">Thanh dieu</string>
+    <string name="msg_dialog">Ban co chac chan muon sua tu nay?</string>
+    <string name="msg_vietnamword">Tieng Viet:</string>
+    <string name="msg_hmongword">Tieng H\'Mong:</string>
+    <string name="msg_reading">Cach doc:</string>
+    <string name="activity_add_newwword_title">Add new word</string>
+</resources>
